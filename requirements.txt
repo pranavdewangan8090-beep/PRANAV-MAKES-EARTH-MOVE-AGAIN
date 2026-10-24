@@ -1,0 +1,7 @@
+# OCTO-EARTH prototype - Python 3.10-3.13 (64-bit)
+numpy>=1.24
+numba>=0.59
+gymnasium>=0.29
+stable-baselines3>=2.2
+torch>=2.1          # the default Windows wheel from PyPI is the CPU build (no GPU needed)
+# optional, only for the test suite:  pip install pytest
