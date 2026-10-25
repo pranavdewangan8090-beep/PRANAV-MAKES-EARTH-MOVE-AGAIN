@@ -3,27 +3,28 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sim 2 · Hydrogen Collecting Disk — OCTO-EARTH</title>
+<title>Sim 2 · Hydrogen Collecting Disk (3D) — OCTO-EARTH</title>
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <header>
   <a class="home" href="../index.html">◂ all simulations</a>
-  <b>HYDROGEN COLLECTING DISK</b>
-  <span class="dim">Earth's eight octo-hands spread a net that captures interstellar hydrogen gas</span>
+  <b>HYDROGEN COLLECTING DISK · 3D</b>
+  <span class="dim">Earth's eight octo-hands form a net; the hands themselves catch the interstellar H gas</span>
 </header>
 
 <main>
   <section id="stage">
     <canvas id="cv"></canvas>
     <div id="hud" class="mono"></div>
+    <div id="stamp" class="mono"></div>
     <div id="controls">
       <span class="lbl">POV:</span>
       <button id="povSolar" class="pov">solar system POV</button>
       <button id="povEarth" class="pov active">earth POV</button>
       <button id="btnPlay">❚❚ Pause</button>
       <button id="btnReset">⟲ Reset</button>
-      <span class="dim small">2 POVs only · drawing not to scale</span>
+      <span class="dim small">2 POVs only · three.js 3D · not to scale · drag to orbit, scroll to zoom</span>
     </div>
   </section>
 
@@ -44,11 +45,13 @@
     <div class="row"><span class="k">M</span><span class="v">1.2×10<sup>10</sup> kg of H</span></div>
 
     <div id="verdict">Notes verdict: the H collected in 10,000 yr is far too little to attach to a
-      fusion fuel cycle → <b>infeasible</b>. The sim only shows the capture itself.</div>
+      fusion fuel cycle → <b>infeasible</b>. The sim only shows the capture itself — atoms stick to
+      the octo-hands' net, they are <b>not</b> sent to Earth.</div>
     <div class="dim small">Animation is illustrative: 1 drawn dot ≈ <b id="cDot"></b> H atoms.
-      The browser does no physics beyond the arithmetic above.</div>
+      3D scene uses three.js r160 from <code>frontend/vendor</code> and the shared octo-arm rig
+      (<code>sim-shared/octoearth3d.js</code>).</div>
   </aside>
 </main>
-<script src="sim.js"></script>
+<script type="module" src="sim.js"></script>
 </body>
 </html>

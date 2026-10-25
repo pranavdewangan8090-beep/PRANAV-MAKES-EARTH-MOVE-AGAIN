@@ -3,20 +3,21 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sim 3 · Dyson Sphere Beam — OCTO-EARTH</title>
+<title>Sim 3 · Dyson Sphere Beam (3D) — OCTO-EARTH</title>
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <header>
   <a class="home" href="../index.html">◂ all simulations</a>
-  <b>DYSON SPHERE BEAM</b>
-  <span class="dim">the sphere concentrates the Sun's energy into one beam; reflectors on the octo-hands catch it — and snap</span>
+  <b>DYSON SPHERE BEAM · 3D</b>
+  <span class="dim">eight octo-hands hold huge concave solar absorbers (cave side on the Sun side) — the beam snaps them</span>
 </header>
 
 <main>
   <section id="stage">
     <canvas id="cv"></canvas>
     <div id="hud" class="mono"></div>
+    <div id="stamp" class="mono"></div>
     <div id="controls">
       <span class="lbl">POV:</span>
       <button id="povSolar" class="pov">solar system POV</button>
@@ -51,13 +52,14 @@
     </div>
 
     <div id="verdict">The beam does push Earth away from the Sun — but the force on the arms is
-      ~11× what they can take, so <b>the arms break</b>. Photon pushing at this power is
-      <b>not possible</b> with these arms.</div>
+      ~11× what they can take, so <b>the arms break</b>: the concave absorbers and their octo-hands
+      snap off and tumble away in 3D. Photon pushing at this power is <b>not possible</b>.</div>
     <div class="dim small">Reference: the Sun's whole output is L<sub>☉</sub> = 3.828×10<sup>26</sup> W;
       the notes' beam power is ≈ 1.8×10<sup>4</sup> × L<sub>☉</sub>, i.e. stored sunlight released as a pulse.
-      Slide P below 6×10<sup>29</sup> W and the arms survive.</div>
+      Slide P below 6×10<sup>29</sup> W and the arms survive. 3D scene: three.js r160 from
+      <code>frontend/vendor</code> + shared rig <code>sim-shared/octoearth3d.js</code>.</div>
   </aside>
 </main>
-<script src="sim.js"></script>
+<script type="module" src="sim.js"></script>
 </body>
 </html>
