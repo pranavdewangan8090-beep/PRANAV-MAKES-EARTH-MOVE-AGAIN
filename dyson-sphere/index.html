@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sim 3 · Dyson Sphere Beam — OCTO-EARTH</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <a class="home" href="../index.html">◂ all simulations</a>
+  <b>DYSON SPHERE BEAM</b>
+  <span class="dim">the sphere concentrates the Sun's energy into one beam; reflectors on the octo-hands catch it — and snap</span>
+</header>
+
+<main>
+  <section id="stage">
+    <canvas id="cv"></canvas>
+    <div id="hud" class="mono"></div>
+    <div id="controls">
+      <span class="lbl">POV:</span>
+      <button id="povSolar" class="pov">solar system POV</button>
+      <button id="povEarth" class="pov active">earth POV</button>
+      <button id="btnPlay">❚❚ Pause</button>
+      <button id="btnReset">⟲ Reset</button>
+      <span class="lbl">beam power P:</span>
+      <input id="pow" type="range" min="26" max="31.5" step="0.01" value="30.838" />
+      <b id="powLbl" class="mono"></b>
+    </div>
+  </section>
+
+  <aside id="calc">
+    <h3>Calculations <span class="dim">(from the notes)</span></h3>
+
+    <div class="row"><span class="k">photons carry momentum</span><span class="v">p = E/c → use photons → get momentum</span></div>
+    <div class="row"><span class="k">force on a reflector arm</span><span class="v">F = 2P/c</span></div>
+    <div class="row"><span class="k">beam power P</span><span class="v"><b id="cP"></b> W</span></div>
+    <div class="row"><span class="k">force on arm</span><span class="v">F = 2P/c = <b id="cF"></b> N</span></div>
+    <div class="row"><span class="k">arms can take</span><span class="v">F<sub>max</sub> ≈ 4×10<sup>21</sup> N</span></div>
+    <div class="row"><span class="k">overload</span><span class="v">F / F<sub>max</sub> = <b id="cR"></b> ×</span></div>
+    <div class="row"><span class="k">push on Earth</span><span class="v">a = F/M<sub>⊕</sub> = <b id="cA"></b> m/s<sup>2</sup> (away from Sun)</span></div>
+
+    <h3>Notes chain</h3>
+    <div class="notechain mono">
+      use photons → get momentum<br />
+      force on arm = 2P/c = 2 × 6.885e30 / 3e8<br />
+      &nbsp;&nbsp;= 45.9e21 N = 4.59e22 N<br />
+      F<sub>max</sub> arm can take ≈ 4e21 N<br />
+      4.59e22 N &gt; 4e21 N → <b>arm breaks</b><br />
+      so not possible
+    </div>
+
+    <div id="verdict">The beam does push Earth away from the Sun — but the force on the arms is
+      ~11× what they can take, so <b>the arms break</b>. Photon pushing at this power is
+      <b>not possible</b> with these arms.</div>
+    <div class="dim small">Reference: the Sun's whole output is L<sub>☉</sub> = 3.828×10<sup>26</sup> W;
+      the notes' beam power is ≈ 1.8×10<sup>4</sup> × L<sub>☉</sub>, i.e. stored sunlight released as a pulse.
+      Slide P below 6×10<sup>29</sup> W and the arms survive.</div>
+  </aside>
+</main>
+<script src="sim.js"></script>
+</body>
+</html>
