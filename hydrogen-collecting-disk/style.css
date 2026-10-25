@@ -53,3 +53,11 @@ button.pov.active { background: #14304f; border-color: #4fa3ff; color: #bfe0ff; 
   background: #170f08; color: #ffcf9a; font-size: 13px;
 }
 #verdict b { color: #ff9a4d; }
+
+#stamp {
+  position: absolute; top: 9%; left: 50%; transform: translateX(-50%);
+  display: none; background: rgba(5, 7, 12, .86); border: 1.5px solid #ff9a4d; border-radius: 8px;
+  padding: 10px 16px; font-size: 13px; color: #ffcf9a; text-align: center;
+  pointer-events: none; max-width: 82%; line-height: 1.6;
+}
+#stamp.show { display: block; }

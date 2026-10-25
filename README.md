@@ -48,13 +48,16 @@ Other systems: `pip install -r requirements.txt`, then `python octoearth_rl.py`.
 | folder | sim | what it shows | POVs |
 |---|---|---|---|
 | `frontend/` | 1 · OCTO-EARTH mass driver | the RL viewer (all physics from `octoearth_rl.py`) | solar system, Earth close-up |
-| `hydrogen-collecting-disk/` | 2 · hydrogen collecting disk | Earth's eight octo-hands hold a ring-net that captures interstellar H gas (n = 10⁶ atoms/m³, Δv = 23 km/s, A = 8πR²); notes chain: 10,000 yr → Vol 7.4e30 m³ → 7.4e36 atoms → 1.2e10 kg, far too little for fusion → infeasible | solar system, earth |
-| `dyson-sphere/` | 3 · Dyson sphere beam | a Dyson sphere concentrates the Sun's energy into one beam at Earth; reflectors on the octo-hands catch it, F = 2P/c = 4.59e22 N vs F_max = 4e21 N → the arms snap | solar system, earth |
+| `hydrogen-collecting-disk/` | 2 · hydrogen collecting disk | full 3D: Earth's eight octo-hands form a net and capture interstellar H gas **on the hands themselves** (n = 10⁶ atoms/m³, Δv = 23 km/s, A = 8πR²); notes chain: 10,000 yr → Vol 7.4e30 m³ → 7.4e36 atoms → 1.2e10 kg, far too little for fusion → infeasible | solar system, earth |
+| `dyson-sphere/` | 3 · Dyson sphere beam | full 3D: a Dyson sphere concentrates the Sun's energy into one beam at Earth; the octo-hands hold huge concave solar absorbers (cave side on the Sun side), F = 2P/c = 4.59e22 N vs F_max = 4e21 N → the arms snap off and tumble | solar system, earth |
 
-Sims 2 and 3 are dependency-free (plain canvas 2D, no build step, two POVs each). Serve the repo
+Sims 2 and 3 are now **full 3D**: they reuse `frontend/vendor/three.module.js` + `OrbitControls.js`
+(three.js r160, no new dependencies) and share the octo-arm Earth rig in `sim-shared/octoearth3d.js`
+(body sphere + 8 two-segment arms; `hand='pad'` scoops for the H net, `hand='mirror'` concave
+absorbers for the beam). Each keeps exactly two POVs (camera presets) and does no physics beyond
+the arithmetic printed in its side panel (values taken from the project notes). Serve the repo
 root with any static server (e.g. `python -m http.server 8811`) and open `/` (hub page),
-`/hydrogen-collecting-disk/` or `/dyson-sphere/`. They do no physics beyond the arithmetic printed
-in their side panels (values taken from the project notes).
+`/hydrogen-collecting-disk/` or `/dyson-sphere/`.
 
 ## Parameters
 
