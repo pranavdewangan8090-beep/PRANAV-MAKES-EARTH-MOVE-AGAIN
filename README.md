@@ -43,6 +43,19 @@ Other systems: `pip install -r requirements.txt`, then `python octoearth_rl.py`.
 | `example_results/` | outputs of the tested 1,000-episode run described below |
 | `tests/test_octoearth.py` | pytest suite, 15 tests (physics checks, Moon in the training model, gate, env API, energy/mass limits, baselines, recorded-state continuity, packet paths vs Kepler, viewer data, parameter validation, documentation coverage) |
 
+## Standalone browser simulations (each in its own folder)
+
+| folder | sim | what it shows | POVs |
+|---|---|---|---|
+| `frontend/` | 1 · OCTO-EARTH mass driver | the RL viewer (all physics from `octoearth_rl.py`) | solar system, Earth close-up |
+| `hydrogen-collecting-disk/` | 2 · hydrogen collecting disk | Earth's eight octo-hands hold a ring-net that captures interstellar H gas (n = 10⁶ atoms/m³, Δv = 23 km/s, A = 8πR²); notes chain: 10,000 yr → Vol 7.4e30 m³ → 7.4e36 atoms → 1.2e10 kg, far too little for fusion → infeasible | solar system, earth |
+| `dyson-sphere/` | 3 · Dyson sphere beam | a Dyson sphere concentrates the Sun's energy into one beam at Earth; reflectors on the octo-hands catch it, F = 2P/c = 4.59e22 N vs F_max = 4e21 N → the arms snap | solar system, earth |
+
+Sims 2 and 3 are dependency-free (plain canvas 2D, no build step, two POVs each). Serve the repo
+root with any static server (e.g. `python -m http.server 8811`) and open `/` (hub page),
+`/hydrogen-collecting-disk/` or `/dyson-sphere/`. They do no physics beyond the arithmetic printed
+in their side panels (values taken from the project notes).
+
 ## Parameters
 
 Change them in the viewer (left panel → Parameters → Apply, then Start training), with

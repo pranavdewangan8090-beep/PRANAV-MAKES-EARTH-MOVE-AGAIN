@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sim 2 · Hydrogen Collecting Disk — OCTO-EARTH</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <a class="home" href="../index.html">◂ all simulations</a>
+  <b>HYDROGEN COLLECTING DISK</b>
+  <span class="dim">Earth's eight octo-hands spread a net that captures interstellar hydrogen gas</span>
+</header>
+
+<main>
+  <section id="stage">
+    <canvas id="cv"></canvas>
+    <div id="hud" class="mono"></div>
+    <div id="controls">
+      <span class="lbl">POV:</span>
+      <button id="povSolar" class="pov">solar system POV</button>
+      <button id="povEarth" class="pov active">earth POV</button>
+      <button id="btnPlay">❚❚ Pause</button>
+      <button id="btnReset">⟲ Reset</button>
+      <span class="dim small">2 POVs only · drawing not to scale</span>
+    </div>
+  </section>
+
+  <aside id="calc">
+    <h3>Calculations <span class="dim">(from the notes)</span></h3>
+
+    <div class="row"><span class="k">H gas density</span><span class="v">1 m<sup>3</sup> → 10<sup>6</sup> H atoms&nbsp; (1 km<sup>3</sup> → 10<sup>15</sup>)</span></div>
+    <div class="row"><span class="k">net area (octa-hands)</span><span class="v">A = 8πR<sub>⊕</sub><sup>2</sup> = <b id="cA"></b> m<sup>2</sup></span></div>
+    <div class="row"><span class="k">relative speed</span><span class="v">Δv = 2.3×10<sup>4</sup> m/s = 23 km/s</span></div>
+    <div class="row"><span class="k">swept volume</span><span class="v">Vol(t) = Δv · t · A = <b id="cVol"></b> m<sup>3</sup></span></div>
+    <div class="row"><span class="k">atoms captured</span><span class="v">N = n · Vol = <b id="cN"></b> atoms</span></div>
+    <div class="row"><span class="k">mass captured</span><span class="v">M = N · m<sub>H</sub>, m<sub>H</sub> = 1.67×10<sup>−27</sup> kg → <b id="cM"></b> kg</span></div>
+    <div class="row"><span class="k">kinetic energy / atom</span><span class="v">½ m<sub>H</sub> Δv<sup>2</sup> = 4.4×10<sup>−19</sup> J</span></div>
+
+    <h3>At t = 10,000 yr <span class="dim">(notes)</span></h3>
+    <div class="row"><span class="k">Vol</span><span class="v">2.3×10<sup>4</sup> · 3.156×10<sup>11</sup> s · 8πR<sup>2</sup> = 7.4×10<sup>30</sup> m<sup>3</sup></span></div>
+    <div class="row"><span class="k">N</span><span class="v">7.4×10<sup>36</sup> H atoms</span></div>
+    <div class="row"><span class="k">M</span><span class="v">1.2×10<sup>10</sup> kg of H</span></div>
+
+    <div id="verdict">Notes verdict: the H collected in 10,000 yr is far too little to attach to a
+      fusion fuel cycle → <b>infeasible</b>. The sim only shows the capture itself.</div>
+    <div class="dim small">Animation is illustrative: 1 drawn dot ≈ <b id="cDot"></b> H atoms.
+      The browser does no physics beyond the arithmetic above.</div>
+  </aside>
+</main>
+<script src="sim.js"></script>
+</body>
+</html>
